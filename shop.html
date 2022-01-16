@@ -12,6 +12,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body style="overflow: hidden;">
+    <div id="particles-js" style="font-family: 'Montserrat', sans-serif; background:none;z-index: -1;"></div>   
+
     <div class="sidenav" style="padding-bottom: 1.7em;">
        <center><img class="sidenavimg" src="images/pushpagg.png"></center>
         <h1 class="sidenavhead">PushpaGG</h1>
@@ -106,4 +108,10 @@ function showDivs(n) {
   }
   x[slideIndex-1].style.display = "block";
 }
+</script>
+<script src="particles.js"></script>
+<script>
+    particlesJS.load('particles-js', 'particles.json', function() {
+  console.log('callback - particles.js config loaded');
+});
 </script>
