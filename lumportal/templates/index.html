@@ -1,0 +1,345 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumportal - Shop</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body style="overflow: hidden;">
+    <div id="particles-js" style="font-family: 'Montserrat', sans-serif; background:none;z-index: -1;"></div>
+
+      <div class="modal">
+        <div class="modal-overlay modal-toggle"></div>
+        <div class="modal-wrapper modal-transition">
+          <div class="modal-header">
+            <button class="modal-close modal-toggle"><svg class="icon-close icon" viewBox="0 0 32 32"><use xlink:href="#icon-close"></use></svg></button>
+            <h2 class="modal-heading">New Notification</h2>
+          </div>
+
+          <div class="modal-body">
+            <div class="modal-content">
+            </div>
+          </div>
+        </div>
+      </div>
+    {% if name == "pushpagg" %}
+    <div class="sidenav" style="padding-bottom: 1.7em;">
+       <center><img class="sidenavimg" src="{% static 'images/pushpagg.png' %}"></center>
+        <h1 class="sidenavhead">PushpaGG</h1>
+        <br>
+        <br>
+        <h2 class="stats" style="margin-block-end: 0.4em;">Coins</h2>
+        <img src="{% static 'images/money.svg' %}" style="max-width:1.6em; display: inline;vertical-align: bottom;margin-top: 0.3em;">
+        <p style="display: inline;font-family: 'Cabin', sans-serif; color: white; vertical-align: middle; font-size: 1.4em;margin-top: 1em;">{{coins}}</p>
+        <br>
+        <br>
+        <h2 class="stats" style="margin-block-end: 0.4em;">Oompa Loompas</h2>
+        <img src="{% static 'images/loompa.svg' %}" style="max-width:1.6em; display: inline;vertical-align: bottom;margin-top: 0.3em;">
+        <p style="display: inline;font-family: 'Cabin', sans-serif; color: white; vertical-align: middle; font-size: 1.4em;margin-top: 0.7em;">{{oompas}}</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="notifs">
+        {% for notif in notifs %}
+        <div class="notif" style="    border-top: 1px solid white;">
+        <img src="{% static 'images/bell.svg' %}" style="max-width: 1.5em; float: left;display: inline;margin-right: 0.9em;vertical-align: middle;">
+        <p style="display: inline; vertical-align: top; color: white; font-family: 'Cabin', sans-serif;font-size: 1em;font-weight: 600;">{{notif}}</p>
+      </div>
+      {% endfor %}
+      <div class="notif">
+      <img src="{% static 'images/bell.svg' %}" style="max-width: 1.5em; float: left;display: inline;margin-right: 0.9em;vertical-align: middle;">
+      <p style="display: inline; vertical-align: top; color: white; font-family: 'Cabin', sans-serif;font-size: 1em;font-weight: 600;">Oompa John just leveled up</p>
+    </div>
+    <div class="notif">
+    <img src="{% static 'images/bell.svg' %}" style="max-width: 1.5em; float: left;display: inline;margin-right: 0.9em;vertical-align: middle;">
+    <p style="display: inline; vertical-align: top; color: white; font-family: 'Cabin', sans-serif;font-size: 1em;font-weight: 600;">Oompa Marie just leveled up</p>
+  </div>
+      </div>
+        <br>
+        <br>
+        <div class="announce">
+            <h1 style="color: white;font-family: 'Cabin', sans-serif; vertical-align: middle; text-align: center;font-size: 1.4em;position:relative;text-align: center;top: 25%;">Announce<span><img src="{% static 'images/announce.svg' %}" style="max-width: 0.7em; margin-left: 0.4em;"></span></h1>
+        </div>
+        <br>
+        <div>
+        </div>
+    </div>
+    {% else %}
+    <div class="sidenav" style="padding-bottom: 1.7em;">
+       <center><img class="sidenavimg" src="{% static 'images/oompapfp.png' %}"></center>
+        <h1 class="sidenavhead">{{name}}</h1>
+        <br>
+        <br>
+        <h2 class="stats" style="margin-block-end: 0.4em;">Level</h2>
+        <img src="{% static 'images/level.svg' %}" style="max-width:1.6em; display: inline;vertical-align: bottom;margin-top: 0.3em;">
+        <p style="display: inline;font-family: 'Cabin', sans-serif; color: white; vertical-align: middle; font-size: 1.4em;margin-top: 1em;">{{level}}</p>
+        <br>
+        <br>
+        <h2 class="stats" style="margin-block-end: 0.4em;">Salary</h2>
+        <img src="{% static 'images/money.svg' %}" style="max-width:1.6em; display: inline;vertical-align: bottom;margin-top: 0.3em;">
+        <p style="display: inline;font-family: 'Cabin', sans-serif; color: white; vertical-align: middle; font-size: 1.4em;margin-top: 0.7em;">{{salary}}</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="notifs">
+        {% for notif in notifs %}
+        <div class="notif" style="    border-top: 1px solid white;">
+        <img src="{% static 'images/bell.svg' %}" style="max-width: 1.5em; float: left;display: inline;margin-right: 0.9em;vertical-align: middle;">
+        <p style="display: inline; vertical-align: top; color: white; font-family: 'Cabin', sans-serif;font-size: 1em;font-weight: 600;">{{notif}}</p>
+      </div>
+      {% endfor %}
+      <div class="notif" style="    border-top: 1px solid white;">
+      <img src="{% static 'images/bell.svg' %}" style="max-width: 1.5em; float: left;display: inline;margin-right: 0.9em;vertical-align: middle;">
+      <p style="display: inline; vertical-align: top; color: white; font-family: 'Cabin', sans-serif;font-size: 1em;font-weight: 600;">Oompa John just leveled up</p>
+    </div>
+    <div class="notif">
+    <img src="{% static 'images/bell.svg' %}" style="max-width: 1.5em; float: left;display: inline;margin-right: 0.9em;vertical-align: middle;">
+    <p style="display: inline; vertical-align: top; color: white; font-family: 'Cabin', sans-serif;font-size: 1em;font-weight: 600;">Oompa Marie just leveled up</p>
+  </div>
+      </div>
+        <br>
+        <br>
+        <div class="announce">
+            <h1 style="color: white;font-family: 'Cabin', sans-serif; vertical-align: middle; text-align: center;font-size: 1.4em;position:relative;text-align: center;top: 25%;">Contact Pushpa<span><img src="{% static 'images/announce.svg' %}" style="max-width: 0.7em; margin-left: 0.4em;"></span></h1>
+        </div>
+        <br>
+        <div>
+        </div>
+    </div>
+    {% endif %}
+    <br>
+    {% if name == "pushpagg" %}
+    <div class="header">
+        <a href="/"><p style="display: inline; margin-left: 2em; color: #C3073F">Home</p></a>
+        <a href="/shop"><p style="display: inline; margin-left: 2em; ">Shop</p></a>
+        <a href="/training"><p style="display: inline; margin-left: 2em;">Training</p></a>
+        <a href="/users/logout"><p style="display: inline; margin-left: 2em; ">Logout</p></a>
+    </div>
+    {% else %}
+    <div class="header">
+
+        <a href="/users/logout"><p style="display: inline; margin-left: 2em; ">Logout</p></a>
+    </div>
+    {% endif %}
+    <br>
+    <br>
+    <br>
+    <main>
+      <br>
+    <br>
+
+<div class="slideshow">
+  <div class="tasks">
+  <h2 style="font-family:'Raleway', sans-serif;color: white;margin-left: 1.2em;padding-top: 1em;">Chocolate Produced</h2>
+      <ul class="tasklist">
+          <li>Total Production = {{chocos}}</li>
+          <li> Production per hour = {{prhr}}</li>
+          <li> Sell price of each chocolate = 100 coins </li>
+          <li> Total sell value = {% widthratio chocos 1 100 %} </li>
+          {% if name == "pushpagg" %}
+          <form method="post" action="">
+            {% csrf_token %}
+            <input type="hidden" name="chocos" value="{{chocos}}">
+          <button id="sellbtn" class="sellbtn"> Sell Chocolates </button>
+        </form>
+        {% endif %}
+      </ul>
+  </div>
+            <br>
+            <div class="tasks">
+            <h2 style="font-family:'Raleway', sans-serif;color: white;margin-left: 1.2em;padding-top: 1em;">In-Progress</h2>
+                <ul class="tasklist">
+
+                  {% if training|length != 0 %}
+                    {% for train in training %}
+                      <li id="{{train.oompa}}">Training {{train.oompa}} - {{train.time}} seconds</li>
+                    <script>
+                      function Countdown(options) {
+                        var timer,
+                        instance = this,
+                        seconds = options.seconds || 10,
+                        updateStatus = options.onUpdateStatus || function () {},
+                        counterEnd = options.onCounterEnd || function () {};
+
+                        function decrementCounter() {
+                          updateStatus(seconds);
+                          if (seconds === 0) {
+                            counterEnd();
+                            instance.stop();
+                          }
+                          seconds--;
+                        }
+
+                        this.start = function () {
+                          clearInterval(timer);
+                          timer = 0;
+                          seconds = options.seconds;
+                          timer = setInterval(decrementCounter, 1000);
+                        };
+
+                        this.stop = function () {
+                          clearInterval(timer);
+                        };
+                      }
+                      var myCounter = new Countdown({
+                          seconds:{{train.time|safe}},  // number of seconds to count down
+                          onUpdateStatus: function(sec){$("#{{ train.oompa|safe }}").html("Training {{train.oompa}} - "+sec + " seconds");}, // callback for each second
+                          onCounterEnd: function(){ $("#{{ train.oompa|safe }}").html("Training {{train.oompa}} - Ended")} // final action
+                      });
+
+                      myCounter.start();
+                      </script>
+                    {% endfor %}
+                  {% else %}
+
+                  {% endif %}
+                </ul>
+            </div>
+            <br>
+
+</div>
+
+<div class="sidephoto" style="  width: 56%;
+      position: absolute;
+          top: 21%;
+      float: right;
+      right: -10%;">
+  <h2 style="font-family:'Raleway', sans-serif;color: white;padding-top: 1em;">Graph of Production Process</h2>
+  <script src="https://chartjs.org/dist/master/chart.js"></script>
+<div class="table">
+  <div class="table-cell">
+    <div class="chart">
+      <canvas id="canvas" style="background: #121214; padding: 1em; border-radius: 10px;"></canvas>
+    </div>
+  </div>
+</div>
+
+</div>
+<h1 style="font-family: 'Raleway', sans-serif; color: #C3073F; position: absolute; bottom: 0; right: 1em;">Lumportal</h1>
+    </main>
+    <textarea style="display:none" id="chat-log" cols="100" rows="20"></textarea><br>
+        <input  style="display:none"id="chat-message-input" type="text" size="100"><br>
+        <input  style="display:none"id="chat-message-submit" type="button" value="Send">
+        {{ room_name|json_script:"room-name" }}
+        <script>
+            const roomName = JSON.parse(document.getElementById('room-name').textContent);
+
+            const chatSocket = new WebSocket(
+                'ws://'
+                + window.location.host
+                + '/ws/chat/'
+                + 'h'
+                + '/'
+            );
+
+            chatSocket.onmessage = function(e) {
+                const data = JSON.parse(e.data);
+                $(".notifs").prepend(`
+                  <div class="notif" style="    border-top: 1px solid white;">
+                  <img src="{% static 'images/bell.svg' %}" style="max-width: 1.5em; float: left;display: inline;margin-right: 0.9em;vertical-align: middle;">
+                    <p style="display: inline; vertical-align: top; color: #C3073F; font-family: 'Cabin', sans-serif;font-size: 1em;font-weight: 600;">${data.message}</p>
+                </div>
+                  `)
+                $(".notifs").animate({
+    scrollTop: 0
+}, 600);
+  if ($(".sidenavhead").html() !== "PushpaGG"){
+    $(".modal-content").append("<p style='color: #C3073F;text-align: center;font-size: 1.5em;padding: 1em;/* font-weight: 500; */font-family: 'Raleway';'> "+data.message+"</p>")
+     $('.modal').toggleClass('is-visible');
+  }
+                document.querySelector('#chat-log').value += (data.message + '\n');
+            };
+
+            chatSocket.onclose = function(e) {
+                console.error('Chat socket closed unexpectedly');
+            };
+
+            document.querySelector('#chat-message-input').focus();
+            document.querySelector('#chat-message-input').onkeyup = function(e) {
+                if (e.keyCode === 13) {  // enter, return
+                    document.querySelector('#chat-message-submit').click();
+                }
+            };
+
+            document.querySelector('#chat-message-submit').onclick = function(e) {
+                const messageInputDom = document.querySelector('#chat-message-input');
+                const message = messageInputDom.value;
+                chatSocket.send(JSON.stringify({
+                    'message': message
+                }));
+                messageInputDom.value = '';
+            };
+        </script>
+</body>
+</html>
+<script>
+    function next(){
+      if($("#slideshow2").is(":hidden")){
+        $("#slideshow1").hide();
+        $("#shopheading").html("Shop New Oompa Loompas")
+        $("#slideshow2").fadeIn();
+      }
+    }
+    function prev(){
+      if($("#slideshow1").is(":hidden")){
+        $("#slideshow2").hide();
+        $("#shopheading").html("Shop New Rooms")
+        $("#slideshow1").fadeIn();
+      }
+    }
+</script>
+<script src="{% static 'particles.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+$("#slideshow2").hide()
+// Quick & dirty toggle to demonstrate modal toggle behavior
+// Quick & dirty toggle to demonstrate modal toggle behavior
+$('.modal-toggle').on('click', function(e) {
+  e.preventDefault();
+  $('.modal').toggleClass('is-visible');
+});
+</script>
+<script>
+    particlesJS.load("{% static 'particles.js' %}", "{% static 'particles.json' %}"function() {
+  console.log('callback - particles.js config loaded');
+});
+</script>
+<script>
+function randomScalingFactor() {
+  return Math.random() * 100;
+}
+
+var barChartData = {
+  labels: {{labels}},
+  datasets: [
+    {
+      label: "Chocolates",
+      backgroundColor: "#C3073F",
+      borderColor: 'black',
+      data: {{dataset}}
+    }
+  ]
+};
+
+window.onload = function () {
+  var ctx = document.getElementById("canvas").getContext("2d");
+  window.myBar = new Chart(ctx, {
+    type: "line",
+    data: barChartData,
+    options: {
+      responsive: true
+    }
+  });
+};
+
+
+</script>
